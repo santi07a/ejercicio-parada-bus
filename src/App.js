@@ -1,24 +1,25 @@
 import { useState } from "react";
+import Buscador from "./componentes/Buscador";
 import Display from "./componentes/Display";
 import Titular from "./componentes/Titular";
 import paradaAPI from "./parada.json";
 
 function App() {
   const [paradaApi, setParadaApi] = useState(paradaAPI);
-  const [numeroParada, setNumeroParada] = useState("");
+  const [busquedaParada, setBusquedaParada] = useState(0);
+  const { data } = paradaApi;
+  const { ibus: [{ line, destination, routeId }] } = data;
+  const [idParada, setIdParada] = useState(routeId);
+
   return (
     <div className="contenedor">
       <header className="cabecera">
-        <Titular numeroParada={numeroParada} />
+        <Titular numeroParada={busquedaParada} />
         <Display />
         <h2>Tiempo para la línea 60: 2 minutos</h2>
       </header>
       <section className="forms">
-        <form>
-          <label htmlFor="num-parada">Parada nº: </label>
-          <input type="number" id="num-parada" />
-          <button type="submit">Buscar</button>
-        </form>
+        <Buscador busquedaParada={busquedaParada} idParada={idParada} />
         <form>
           <label htmlFor="tiempo-linea">Tiempo para que llegue la línea: </label>
           <select id="tiempo-linea">
