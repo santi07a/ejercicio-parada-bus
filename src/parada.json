@@ -1,0 +1,23 @@
+{
+  "status": "success",
+  "data": {
+    "ibus": [
+      {
+        "routeId": "0241",
+        "line": "24",
+        "text-ca": "1 min",
+        "t-in-s": 73,
+        "destination": "Pl. Catalunya",
+        "t-in-min": 1
+      },
+      {
+        "routeId": "2401",
+        "line": "D40",
+        "text-ca": "2 min",
+        "t-in-s": 166,
+        "destination": "Pl. Espanya",
+        "t-in-min": 2
+      }
+    ]
+  }
+}
