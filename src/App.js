@@ -19,7 +19,7 @@ function App() {
         <Titular numeroParada={busquedaParada} />
         <Display />
         <TiempoLinea /* (De esta manera, ùnicamente devuelve el número y tiempo del primer bus que aparece,
-        no está vinculado al buscador de ninguna manera) numeroLinea={line} tiempoRestante={tiempoEnMinutos} */ />
+        no está vinculado al buscador de ninguna manera) */ numeroLinea={line} tiempoRestante={tiempoEnMinutos} />
       </header>
       <section className="forms">
         <Buscador busquedaParada={busquedaParada} idParada={idParada} />
