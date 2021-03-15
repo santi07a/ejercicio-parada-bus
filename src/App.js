@@ -1,4 +1,7 @@
+import paradaApi from "./parada.json";
+
 function App() {
+  console.log(paradaApi);
   return (
     <div className="contenedor">
       <header className="cabecera">
