@@ -1,13 +1,17 @@
+import PropTypes from "prop-types";
+import { lineaType } from "../types/lineaType";
+import Lineas from "./Lineas";
+
 const Display = props => {
+  const { parada } = props;
   return (
-    <div className="display">
-      <div className="bus">
-        <span className="linea">V16</span>
-        <span className="destino">Universitat</span>
-        <span className="tiempo">10min</span>
-      </div>
-    </div>
+    parada.map(linea => <Lineas key={linea.routeId} linea={linea}></Lineas >)
   );
 };
+
+Display.propTypes = {
+  parada: PropTypes.array.isRequired
+};
+
 
 export default Display;

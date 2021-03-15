@@ -12,11 +12,12 @@ function App() {
   const [paradaBuscada, setParadaBuscada] = useState(0);
   const { data } = paradaApi;
   const { ibus: [{ line, destination, routeId, "t-in-min": tiempoEnMinutos }] } = data;
+
   return (
     <div className="contenedor">
       <header className="cabecera">
         <Titular numeroParada={paradaBuscada} />
-        <Display />
+        <Display parada={data.ibus} />
         <TiempoLinea /* (De esta manera, ùnicamente devuelve el número y tiempo del primer bus que aparece,
         no está vinculado al buscador de ninguna manera) */ numeroLinea={line} tiempoRestante={tiempoEnMinutos} />
       </header>
