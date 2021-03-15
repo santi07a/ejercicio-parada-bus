@@ -8,7 +8,7 @@ const Titular = props => {
 };
 
 Titular.propTypes = {
-  numeroParada: PropTypes.number.isRequired,
+  numeroParada: PropTypes.string.isRequired,
 };
 
 export default Titular;
