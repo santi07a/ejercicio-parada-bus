@@ -1,28 +1,24 @@
-import PropTypes from "prop-types";
+import { useContext } from "react";
+import ParadaContext from "../Contexts/ParadaContext";
 
-const Buscador = props => {
-  const { paradaBuscada, setParadaBusqueda } = props;
+const Buscador = () => {
+  const { paradaBuscada, setParadaBuscada, setUrlBusqueda } = useContext(ParadaContext);
 
-  /*  const paradaIngresada = (e) => {
-     setParadaBusqueda(e.target.value);
-   };
-   const submitParada = (e) => {
-     e.preventDefault();
-     setParadaBusqueda(paradaBuscada);
-   };
-   return (
-     <form onSubmit={submitParada}>
-       <label htmlFor="num-parada">Parada nº: </label>
-       <input type="number" id="num-parada" onChange={paradaIngresada} />
-       <button type="submit">Buscar</button>
-     </form>); */
+  const modificaParadaBuscada = e => {
+    setParadaBuscada(e.target.value);
+  };
+
+  const buscarParada = e => {
+    e.preventDefault();
+  };
+
+
   return (
-    <h3>Hola</h3>
-  );
-};
-
-Buscador.propTypes = {
-  paradaBuscada: PropTypes.string.isRequired,
+    <form onSubmit={buscarParada}>
+      <label htmlFor="num-parada">Parada nº: </label>
+      <input type="number" id="num-parada" onChange={modificaParadaBuscada} />
+      <button type="submit">Buscar</button>
+    </form>);
 };
 
 export default Buscador;
