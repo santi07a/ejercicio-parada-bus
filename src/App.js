@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Titular from "./componentes/Titular";
-import paradaApi from "./parada.json";
+import paradaAPI from "./parada.json";
 
 function App() {
+  const [paradaApi, setParadaApi] = useState(paradaAPI);
   const [numeroParada, setNumeroParada] = useState("");
   return (
     <div className="contenedor">
