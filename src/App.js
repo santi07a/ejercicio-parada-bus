@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Display from "./componentes/Display";
 import Titular from "./componentes/Titular";
 import paradaAPI from "./parada.json";
 
@@ -9,13 +10,7 @@ function App() {
     <div className="contenedor">
       <header className="cabecera">
         <Titular numeroParada={numeroParada} />
-        <div className="display">
-          <div className="bus">
-            <span className="linea">V16</span>
-            <span className="destino">Universitat</span>
-            <span className="tiempo">10min</span>
-          </div>
-        </div>
+        <Display />
         <h2>Tiempo para la línea 60: 2 minutos</h2>
       </header>
       <section className="forms">
