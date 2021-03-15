@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Buscador from "./componentes/Buscador";
 import Display from "./componentes/Display";
+import TiempoLinea from "./componentes/TiempoLinea";
 import Titular from "./componentes/Titular";
 import paradaAPI from "./parada.json";
 
@@ -16,7 +17,7 @@ function App() {
       <header className="cabecera">
         <Titular numeroParada={busquedaParada} />
         <Display />
-        <h2>Tiempo para la línea 60: 2 minutos</h2>
+        <TiempoLinea />
       </header>
       <section className="forms">
         <Buscador busquedaParada={busquedaParada} idParada={idParada} />
