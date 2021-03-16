@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
 const Titular = props => {
-  const { numeroParada } = props;
+  const { numeroParada, existeParada } = props;
   return (
-    <h1>Parada nº {numeroParada}</h1>
+    existeParada ? <h1>Parada nº {numeroParada}</h1> : <h1>La parada {numeroParada} no existe</h1>
   );
 };
 
