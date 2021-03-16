@@ -1,15 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import ParadaContext from "../Contexts/ParadaContext";
 
 const Buscador = () => {
   const { paradaBuscada, setParadaBuscada, setUrlBusqueda } = useContext(ParadaContext);
+  const [busqueda, setBusqueda] = useState("");
 
   const modificaParadaBuscada = e => {
-    setParadaBuscada(e.target.value);
+    setBusqueda(e.target.value);
   };
 
   const buscarParada = e => {
     e.preventDefault();
+    setParadaBuscada(busqueda);
   };
 
 
