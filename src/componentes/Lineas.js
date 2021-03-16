@@ -4,6 +4,7 @@ import { lineaType } from "../types/lineaType";
 const Lineas = props => {
   const { linea } = props;
   const { line: numero, destination: destino, "text-ca": minutos } = linea;
+
   return (
     <div className="display">
       <div className="bus">
