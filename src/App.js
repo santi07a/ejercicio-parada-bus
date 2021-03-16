@@ -14,13 +14,13 @@ function App() {
   const [urlBusqueda, setUrlBusqueda] = useState("");
   const [paradaBuscada, setParadaBuscada] = useState("");
   const { data } = paradaApi;
-  const [ocultarFrase, setOcultarFrase] = useState(true);
+  const [ocultarForm, setOcultarForm] = useState(true);
   const { ibus, ibus: [{ line, destination, routeId, "t-in-min": tiempoEnMinutos }] } = data;
   const paradaPrueba = data.ibus;
 
   return (
-    <GeneralContext.Provider value={{ ibus, paradaPrueba, paradaBuscada, setParadaBuscada }}>
-      <OcultarContext.Provider value={ocultarFrase}>
+    <GeneralContext.Provider value={{ ibus, paradaPrueba, paradaBuscada, setParadaBuscada, setOcultarForm }}>
+      <OcultarContext.Provider value={ocultarForm}>
         <div className="contenedor">
           <header className="cabecera">
             <Titular numeroParada={paradaBuscada} />
