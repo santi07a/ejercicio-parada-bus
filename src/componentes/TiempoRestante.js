@@ -6,11 +6,11 @@ const TiempoRestante = () => {
   const ocultarForm = useContext(OcultarContext);
   const paradas = useContext(GeneralContext);
   const { ibus, setParadaBuscada } = paradas;
-  const elegirLinea = e => setParadaBuscada(e.target.value);
+  const elegirBus = e => setParadaBuscada(e.target.value);
   return (
     <form hidden={ocultarForm}>
       <label htmlFor="tiempo-linea">Tiempo para que llegue la línea: </label>
-      <select onChange={elegirLinea} id="tiempo-linea">
+      <select onChange={elegirBus} id="tiempo-linea">
         <option value="">Elige línea</option>
         {ibus.map(parada => <option value={parada.line} key={parada.routeId}>{parada.line}</option>)}
       </select>
