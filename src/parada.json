@@ -11,6 +11,14 @@
         "t-in-min": 1
       },
       {
+        "routeId": "0348",
+        "line": "43",
+        "text-ca": "3 min",
+        "t-in-s": 34,
+        "destination": "Canyelles",
+        "t-in-min": 3
+      },
+      {
         "routeId": "2401",
         "line": "D40",
         "text-ca": "2 min",
