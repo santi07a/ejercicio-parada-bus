@@ -3,10 +3,10 @@ import GeneralContext from "../Contexts/GeneralContext";
 
 const TiempoRestante = () => {
   const paradas = useContext(GeneralContext);
-  const { ibus, setParadaBuscada } = paradas;
+  const { ibus, paradaBuscada, setParadaBuscada } = paradas;
   const elegirBus = e => setParadaBuscada(e.target.value);
   return (
-    <form >
+    <form hidden={paradaBuscada === "" ? false : true}>
       <label htmlFor="tiempo-linea">Tiempo para que llegue la línea: </label>
       <select onChange={elegirBus} id="tiempo-linea">
         <option value="">Elige línea</option>
