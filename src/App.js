@@ -15,7 +15,6 @@ function App() {
   const [paradaBuscada, setParadaBuscada] = useState("");
   const [linea, setLinea] = useState("");
   const { data } = paradaApi;
-  const [ocultarFrase, setOcultarFrase] = useState(true);
   const { ibus, ibus: [{ line, destination, routeId, "t-in-min": tiempoEnMinutos }] } = data;
   const paradaPrueba = data.ibus;
 
