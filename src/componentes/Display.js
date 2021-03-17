@@ -27,8 +27,7 @@ const Display = props => {
 };
 
 Display.propTypes = {
-  parada: PropTypes.array.isRequired
+  parada: PropTypes.arrayOf(PropTypes.shape(lineaType)).isRequired
 };
-
 
 export default Display;
