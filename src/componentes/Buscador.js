@@ -3,7 +3,7 @@ import ParadaContext from "../Contexts/ParadaContext";
 import GeneralContext from "../Contexts/GeneralContext";
 
 const Buscador = () => {
-  const { paradaBuscada, setParadaBuscada, setUrlBusqueda, setOcultarForm } = useContext(ParadaContext);
+  const { paradaBuscada, setParadaBuscada, setUrlBusqueda } = useContext(ParadaContext);
   const [busqueda, setBusqueda] = useState("");
 
   const modificaParadaBuscada = e => {
