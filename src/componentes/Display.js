@@ -7,7 +7,7 @@ const Display = props => {
   const { parada } = props;
   const [posicion, setPosicion] = useState(0);
   if (parada.length > 1) {
-    setInterval(() => {
+    setTimeout(() => {
       if (posicion !== -(30 * (parada.length - 1))) {
         setPosicion(posicion - 30);
       } else {
