@@ -3,7 +3,6 @@ import Display from "./componentes/Display";
 import Formularios from "./componentes/Formularios";
 import TiempoLinea from "./componentes/TiempoLinea";
 import Titular from "./componentes/Titular";
-import OcultarContext from "./Contexts/OcultarContext";
 import ParadaContext from "./Contexts/ParadaContext";
 import useFetch from "./hooks/useFetch";
 import paradaAPI from "./parada.json";
@@ -21,19 +20,17 @@ function App() {
 
   return (
     <GeneralContext.Provider value={{ ibus, paradaPrueba, paradaBuscada, setParadaBuscada }}>
-      <OcultarContext.Provider value={ocultarFrase}>
-        <div className="contenedor">
-          <header className="cabecera">
-            <Titular numeroParada={paradaBuscada} existeParada={existeParada} />
-            <Display parada={paradaPrueba} />
-            <TiempoLinea /* (De esta manera, ùnicamente devuelve el número y tiempo del primer bus que aparece,
+      <div className="contenedor">
+        <header className="cabecera">
+          <Titular numeroParada={paradaBuscada} existeParada={existeParada} />
+          <Display parada={paradaPrueba} />
+          <TiempoLinea /* (De esta manera, ùnicamente devuelve el número y tiempo del primer bus que aparece,
         no está vinculado al buscador de ninguna manera) */ numeroLinea={line} tiempoRestante={tiempoEnMinutos} />
-          </header>
-          <ParadaContext.Provider value={{ paradaPrueba, paradaBuscada, setParadaBuscada, setUrlBusqueda }}>
-            <Formularios />
-          </ParadaContext.Provider>
-        </div >
-      </OcultarContext.Provider>
+        </header>
+        <ParadaContext.Provider value={{ paradaPrueba, paradaBuscada, setParadaBuscada, setUrlBusqueda }}>
+          <Formularios />
+        </ParadaContext.Provider>
+      </div >
     </GeneralContext.Provider>
   );
 }
