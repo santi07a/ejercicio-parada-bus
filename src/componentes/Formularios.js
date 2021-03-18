@@ -1,12 +1,12 @@
 import Buscador from "./Buscador";
-import TiempoRestante from "./TiempoRestante";
+import BuscadorLinea from "./BuscadorLinea";
 
 const Formularios = () => {
 
   return (
     <section className="forms">
       <Buscador />
-      <TiempoRestante />
+      <BuscadorLinea />
     </section>
   );
 };
