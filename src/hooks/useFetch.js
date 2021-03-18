@@ -1,19 +1,13 @@
-import { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
-const useFetch = (url) => {
+const useFetch = () => {
   const [datos, setDatos] = useState(null);
-  useEffect(() => {
-    if (url) {
-      fetch(url)
-        .then(resp => resp.json())
-        .then(datosAPI => {
-          setDatos(datosAPI);
-        });
-    }
-  }, [url]);
-  return {
-    datos
-  };
+  const pedirDatos = useCallback(url => {
+    fetch(url)
+      .then(resp => resp.json())
+      .then(datosAPI => setDatos(datosAPI));
+  }, []);
+  return { datos, pedirDatos };
 };
 
 export default useFetch;

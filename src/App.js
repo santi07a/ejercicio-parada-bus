@@ -9,6 +9,17 @@ import paradaAPI from "./parada.json";
 import GeneralContext from "./Contexts/GeneralContext";
 
 function App() {
+  /*   const { datos: parada, pedirDatos: pedirParada } = useFetch();
+    const { datos: linea, pedirDatos: pedirLinea } = useFetch();
+    useEffect(() => {
+      pedirParada(urlBusqueda);
+    }, [pedirParada, urlBusqueda]);
+    useEffect(() => {
+      if (parada) {
+        pedirLinea(urlBusqueda);
+      }
+    }, [parada, pedirLinea, urlBusqueda]); */
+
   const [paradaApi, setParadaApi] = useState(paradaAPI);
   const [urlBusqueda, setUrlBusqueda] = useState("");
   const [existeParada, setExisteParada] = useState(false);
