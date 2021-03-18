@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import GeneralContext from "../Contexts/GeneralContext";
 
-const TiempoRestante = () => {
+const BuscadorLinea = () => {
   const paradas = useContext(GeneralContext);
   const { ibus, paradaBuscada, setLinea } = paradas;
   const elegirBus = e => setLinea(e.target.value);
@@ -16,4 +16,4 @@ const TiempoRestante = () => {
   );
 };
 
-export default TiempoRestante;
+export default BuscadorLinea;
