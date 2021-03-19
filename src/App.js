@@ -34,9 +34,7 @@ function App() {
           <Display parada={paradaPrueba} />
           <TiempoLinea linea={linea} tiempoRestante={tiempoEnMinutos} />
         </header>
-        <ParadaContext.Provider value={{ paradaPrueba, paradaBuscada, setParadaBuscada }}>
-          <Formularios />
-        </ParadaContext.Provider>
+        <Formularios />
       </div >
     </GeneralContext.Provider>
   );
