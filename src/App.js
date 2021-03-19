@@ -21,8 +21,6 @@ function App() {
     }, [parada, pedirLinea, urlBusqueda]); */
 
   const [paradaApi, setParadaApi] = useState(paradaAPI);
-  const [urlBusqueda, setUrlBusqueda] = useState("");
-  const [existeParada, setExisteParada] = useState(false);
   const [paradaBuscada, setParadaBuscada] = useState("");
   const [linea, setLinea] = useState("");
   const { data } = paradaApi;
@@ -39,7 +37,7 @@ function App() {
           <Display parada={paradaPrueba} />
           <TiempoLinea linea={linea} tiempoRestante={tiempoEnMinutos} />
         </header>
-        <ParadaContext.Provider value={{ paradaPrueba, paradaBuscada, setParadaBuscada, setUrlBusqueda }}>
+        <ParadaContext.Provider value={{ paradaPrueba, paradaBuscada, setParadaBuscada }}>
           <Formularios />
         </ParadaContext.Provider>
       </div >
