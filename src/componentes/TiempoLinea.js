@@ -8,7 +8,7 @@ const TiempoLinea = props => {
 
   useEffect(() => {
     if (linea !== 0 && linea !== "") {
-      setTiempo(paradaPrueba.filter(bus => bus.line === linea)[0]["text-ca"]);
+      setTiempo(paradaPrueba.filter(bus => bus.line === linea)[0]["t-in-min"]);
     }
   }, [paradaPrueba, linea, setTiempo]);
   return (
