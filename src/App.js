@@ -26,15 +26,16 @@ function App() {
   const [paradaBuscada, setParadaBuscada] = useState("");
   const [linea, setLinea] = useState("");
   const { data } = paradaApi;
+  const [ocultarFrase, setOcultarFrase] = useState(true);
   const [tiempo, setTiempo] = useState(0);
   const { ibus, ibus: [{ line, destination, routeId, "t-in-min": tiempoEnMinutos }] } = data;
   const paradaPrueba = data.ibus;
 
   return (
-    <GeneralContext.Provider value={{ ibus, paradaPrueba, paradaBuscada, setParadaBuscada, setLinea }}>
+    <GeneralContext.Provider value={{ ibus, paradaPrueba, ocultarFrase, tiempo, paradaBuscada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
       <div className="contenedor">
         <header className="cabecera">
-          <Titular numeroParada={paradaBuscada} existeParada={existeParada} />
+          <Titular numeroParada={paradaBuscada} />
           <Display parada={paradaPrueba} />
           <TiempoLinea /* (De esta manera, ùnicamente devuelve el número y tiempo del primer bus que aparece,
         no está vinculado al buscador de ninguna manera) */ linea={linea} tiempoRestante={tiempoEnMinutos} />
