@@ -2,14 +2,17 @@ import { useContext, useEffect } from "react";
 import GeneralContext from "../Contexts/GeneralContext";
 
 const BuscadorLinea = () => {
-  const { paradas, ocultarFrase, setOcultarFrase, ibus, paradaBuscada, setLinea } = useContext(GeneralContext);
+  const { ocultarFrase, setOcultarFrase, ibus, paradaBuscada, setLinea } = useContext(GeneralContext);
   const elegirBus = e => setLinea(e.target.value);
+  const rutas = [...ibus];
+  const compruebaRutas = rutas.map(route => route.routeId);
 
   useEffect(() => {
-    if (paradaBuscada === "0241") {
+    if (compruebaRutas.includes(paradaBuscada)) {
       setOcultarFrase(false);
     }
   });
+
   return (
     <form hidden={ocultarFrase}>
       <label htmlFor="tiempo-linea">Tiempo para que llegue la línea: </label>

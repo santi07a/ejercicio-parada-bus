@@ -32,13 +32,12 @@ function App() {
   const paradaPrueba = data.ibus;
 
   return (
-    <GeneralContext.Provider value={{ ibus, paradaPrueba, ocultarFrase, tiempo, paradaBuscada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
+    <GeneralContext.Provider value={{ ibus, routeId, paradaPrueba, ocultarFrase, tiempo, paradaBuscada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
       <div className="contenedor">
         <header className="cabecera">
           <Titular numeroParada={paradaBuscada} />
           <Display parada={paradaPrueba} />
-          <TiempoLinea /* (De esta manera, ùnicamente devuelve el número y tiempo del primer bus que aparece,
-        no está vinculado al buscador de ninguna manera) */ linea={linea} tiempoRestante={tiempoEnMinutos} />
+          <TiempoLinea linea={linea} tiempoRestante={tiempoEnMinutos} />
         </header>
         <ParadaContext.Provider value={{ paradaPrueba, paradaBuscada, setParadaBuscada, setUrlBusqueda }}>
           <Formularios />
