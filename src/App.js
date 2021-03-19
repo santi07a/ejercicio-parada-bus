@@ -35,7 +35,7 @@ function App() {
     <GeneralContext.Provider value={{ ibus, paradaPrueba, ocultarFrase, tiempo, paradaBuscada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
       <div className="contenedor">
         <header className="cabecera">
-          <Titular numeroParada={paradaBuscada} existeParada={existeParada} />
+          <Titular numeroParada={paradaBuscada} />
           <Display parada={paradaPrueba} />
           <TiempoLinea /* (De esta manera, ùnicamente devuelve el número y tiempo del primer bus que aparece,
         no está vinculado al buscador de ninguna manera) */ linea={linea} tiempoRestante={tiempoEnMinutos} />
