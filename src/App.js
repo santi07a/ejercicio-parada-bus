@@ -26,6 +26,7 @@ function App() {
   const [paradaBuscada, setParadaBuscada] = useState("");
   const [linea, setLinea] = useState("");
   const { data } = paradaApi;
+  const [tiempo, setTiempo] = useState(0);
   const { ibus, ibus: [{ line, destination, routeId, "t-in-min": tiempoEnMinutos }] } = data;
   const paradaPrueba = data.ibus;
 
