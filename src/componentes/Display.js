@@ -10,9 +10,9 @@ const Display = props => {
   useEffect(() => {
     if (parada.length > 0) {
       setInterval(() => {
-        setPosicion((a) => {
-          if (a !== -(30 * (parada.length - 1))) {
-            return a - 30;
+        setPosicion((position) => {
+          if (position !== -(30 * (parada.length - 1))) {
+            return position - 30;
           } else {
             return 0;
           }
