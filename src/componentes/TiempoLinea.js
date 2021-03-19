@@ -4,13 +4,13 @@ import GeneralContext from "../Contexts/GeneralContext";
 
 const TiempoLinea = props => {
   const { linea } = props;
-  const { tiempo, setTiempo, ibus, ocultarFrase } = useContext(GeneralContext);
+  const { tiempo, setTiempo, paradaPrueba, ocultarFrase } = useContext(GeneralContext);
 
   useEffect(() => {
     if (linea !== 0 && linea !== "") {
-      setTiempo(ibus.filter(bus => bus.line === linea)[0]["text-ca"]);
+      setTiempo(paradaPrueba.filter(bus => bus.line === linea)[0]["text-ca"]);
     }
-  }, [ibus, linea, setTiempo]);
+  }, [paradaPrueba, linea, setTiempo]);
   return (
     <h2 hidden={ocultarFrase}>Tiempo para la línea {linea}: {tiempo} minutos</h2>
   );

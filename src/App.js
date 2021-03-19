@@ -20,28 +20,21 @@ function App() {
       }
     }, [parada, pedirLinea, urlBusqueda]); */
 
-  const [paradaApi, setParadaApi] = useState(paradaAPI);
-  const [urlBusqueda, setUrlBusqueda] = useState("");
-  const [existeParada, setExisteParada] = useState(false);
   const [paradaBuscada, setParadaBuscada] = useState("");
   const [linea, setLinea] = useState("");
-  const { data } = paradaApi;
   const [ocultarFrase, setOcultarFrase] = useState(true);
   const [tiempo, setTiempo] = useState(0);
-  const { ibus, ibus: [{ line, "t-in-min": tiempoEnMinutos }] } = data;
-  const paradaPrueba = data.ibus;
+  const { ibus: paradaPrueba, ibus: [{ line, "t-in-min": tiempoEnMinutos }] } = paradaAPI.data;
 
   return (
-    <GeneralContext.Provider value={{ ibus, paradaPrueba, ocultarFrase, tiempo, paradaBuscada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
+    <GeneralContext.Provider value={{ paradaPrueba, ocultarFrase, tiempo, paradaBuscada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
       <div className="contenedor">
         <header className="cabecera">
           <Titular numeroParada={paradaBuscada} />
           <Display parada={paradaPrueba} />
           <TiempoLinea linea={linea} tiempoRestante={tiempoEnMinutos} />
         </header>
-        <ParadaContext.Provider value={{ paradaPrueba, paradaBuscada, setParadaBuscada, setUrlBusqueda }}>
-          <Formularios />
-        </ParadaContext.Provider>
+        <Formularios />
       </div >
     </GeneralContext.Provider>
   );

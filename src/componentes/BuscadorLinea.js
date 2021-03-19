@@ -2,9 +2,9 @@ import { useContext, useEffect } from "react";
 import GeneralContext from "../Contexts/GeneralContext";
 
 const BuscadorLinea = () => {
-  const { ocultarFrase, setOcultarFrase, ibus, paradaBuscada, setLinea } = useContext(GeneralContext);
+  const { ocultarFrase, setOcultarFrase, paradaPrueba, paradaBuscada, setLinea } = useContext(GeneralContext);
   const elegirBus = e => setLinea(e.target.value);
-  const rutas = [...ibus];
+  const rutas = [...paradaPrueba];
   const compruebaRutas = rutas.map(route => route.routeId);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const BuscadorLinea = () => {
       <select onChange={elegirBus} id="tiempo-linea">
         <option value="">Elige línea</option>
         {
-          ibus.map(parada => <option value={parada.line} key={parada.routeId}>{parada.line}</option>)
+          paradaPrueba.map(parada => <option value={parada.line} key={parada.routeId}>{parada.line}</option>)
         };
         </select>
     </form >

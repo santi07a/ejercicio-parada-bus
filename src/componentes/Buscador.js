@@ -1,10 +1,8 @@
 import { useContext, useState } from "react";
-import ParadaContext from "../Contexts/ParadaContext";
 import GeneralContext from "../Contexts/GeneralContext";
 
 const Buscador = () => {
-  const { setParadaBuscada } = useContext(ParadaContext);
-  const { setOcultarFrase } = useContext(GeneralContext);
+  const { setOcultarFrase, setParadaBuscada } = useContext(GeneralContext);
   const [busqueda, setBusqueda] = useState("");
 
   const modificaParadaBuscada = e => {
