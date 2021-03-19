@@ -3,7 +3,6 @@ import Display from "./componentes/Display";
 import Formularios from "./componentes/Formularios";
 import TiempoLinea from "./componentes/TiempoLinea";
 import Titular from "./componentes/Titular";
-import ParadaContext from "./Contexts/ParadaContext";
 import useFetch from "./hooks/useFetch";
 import paradaAPI from "./parada.json";
 import GeneralContext from "./Contexts/GeneralContext";
