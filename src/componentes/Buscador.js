@@ -3,7 +3,8 @@ import ParadaContext from "../Contexts/ParadaContext";
 import GeneralContext from "../Contexts/GeneralContext";
 
 const Buscador = () => {
-  const { paradaBuscada, setParadaBuscada, setUrlBusqueda } = useContext(ParadaContext);
+  const { setParadaBuscada } = useContext(ParadaContext);
+  const { setOcultarFrase } = useContext(GeneralContext);
   const [busqueda, setBusqueda] = useState("");
 
   const modificaParadaBuscada = e => {
@@ -20,7 +21,7 @@ const Buscador = () => {
     <form onSubmit={buscarParada}>
       <label htmlFor="num-parada">{buscarParada ? "Parada nº" : ""} </label>
       <input type="number" id="num-parada" onChange={modificaParadaBuscada} />
-      <button type="submit">Buscar</button>
+      <button type="submit" onClick={setOcultarFrase(true)}>Buscar</button>
     </form>);
 };
 
