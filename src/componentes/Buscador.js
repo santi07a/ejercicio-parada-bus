@@ -21,7 +21,7 @@ const Buscador = () => {
     <form onSubmit={buscarParada}>
       <label htmlFor="num-parada">{buscarParada ? "Parada nº" : ""} </label>
       <input type="number" id="num-parada" onChange={modificaParadaBuscada} />
-      <button type="submit" onClick={setOcultarFrase(true)}>Buscar</button>
+      <button type="submit">Buscar</button>
     </form>);
 };
 
