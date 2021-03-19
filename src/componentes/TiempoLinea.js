@@ -4,7 +4,7 @@ import GeneralContext from "../Contexts/GeneralContext";
 
 const TiempoLinea = props => {
   const { linea } = props;
-  const { tiempo, setTiempo, ibus } = useContext(GeneralContext);
+  const { tiempo, setTiempo, ibus, ocultarFrase } = useContext(GeneralContext);
 
   useEffect(() => {
     if (linea !== 0 && linea !== "") {
@@ -12,7 +12,7 @@ const TiempoLinea = props => {
     }
   }, [ibus, linea, setTiempo]);
   return (
-    <h2 hidden={linea === "" ? true : false}>Tiempo para la línea {linea}: {tiempo} minutos</h2>
+    <h2 hidden={ocultarFrase}>Tiempo para la línea {linea}: {tiempo} minutos</h2>
   );
 };
 
