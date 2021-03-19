@@ -8,16 +8,18 @@ const Display = props => {
   const [posicion, setPosicion] = useState(0);
 
   useEffect(() => {
-    if (parada.length > 1) {
-      setTimeout(() => {
-        if (posicion !== -(30 * (parada.length - 1))) {
-          setPosicion(posicion - 30);
-        } else {
-          setPosicion(0);
-        }
+    if (parada.length > 0) {
+      setInterval(() => {
+        setPosicion((a) => {
+          if (a !== -(30 * (parada.length - 1))) {
+            return a - 30;
+          } else {
+            return 0;
+          }
+        });
       }, 2000);
     }
-  }, [parada.length, posicion]);
+  }, [parada.length]);
 
   return (
     <div className="display">
