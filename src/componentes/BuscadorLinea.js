@@ -14,7 +14,7 @@ const BuscadorLinea = () => {
         <option value="">Elige línea</option>
         {
           parada?.data.ibus
-            .map(linea => <option value={linea.line} >{linea.line}</option>)
+            .map(linea => <option key={linea.line} value={linea.line} >{linea.line}</option>)
         }
       </select>
     </form >
