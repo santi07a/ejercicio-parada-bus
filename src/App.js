@@ -27,7 +27,7 @@ function App() {
   const { ibus: paradaPrueba, ibus: [{ line, "t-in-min": tiempoEnMinutos }] } = paradaAPI.data;
 
   return (
-    <GeneralContext.Provider value={{ paradaPrueba, parada, ocultarFrase, tiempo, paradaBuscada, existeParada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
+    <GeneralContext.Provider value={{ paradaPrueba, linea, parada, ocultarFrase, tiempo, paradaBuscada, existeParada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
       <div className="contenedor">
         <header className="cabecera">
           <Titular numeroParada={paradaBuscada} />
