@@ -5,7 +5,7 @@ const useFetch = () => {
   const pedirDatos = useCallback(url => {
     fetch(url)
       .then(resp => resp.json())
-      .then(datosAPI => { setDatos(datosAPI); console.log(datosAPI); });
+      .then(datosAPI => setDatos(datosAPI));
   }, []);
   return { datos, pedirDatos };
 };
