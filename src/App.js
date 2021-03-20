@@ -27,7 +27,6 @@ function App() {
       pedirParada(`https://api.tmb.cat/v1/ibus/stops/${paradaBuscada}?app_id=61904654&app_key=11d3b02f2f8b89d769d4ea6f88aa3ae5`);
     }
   }, [paradaBuscada, existeParada, pedirParada]);
-
   return (
     <Router>
       <GeneralContext.Provider value={{ linea, parada, ocultarFrase, tiempo, paradaBuscada, existeParada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
