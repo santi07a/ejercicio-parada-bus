@@ -1,8 +1,10 @@
 import { useContext, useEffect } from "react";
 import GeneralContext from "../Contexts/GeneralContext";
+import ParadaContext from "../Contexts/ParadaContext";
 
 const BuscadorLinea = () => {
-  const { ocultarFrase, parada, setOcultarFrase, existeParada, linea, paradaBuscada, setLinea } = useContext(GeneralContext);
+  const { ocultarFrase, setLinea } = useContext(GeneralContext);
+  const { parada } = useContext(ParadaContext);
   const elegirBus = e => setLinea(e.target.value);
 
   return (
