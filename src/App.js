@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Switch, Route, BrowserRouter as Router, NavLink, Redirect } from "react-router-dom";
 import Display from "./componentes/Display";
 import Formularios from "./componentes/Formularios";
 import TiempoLinea from "./componentes/TiempoLinea";
@@ -6,6 +7,9 @@ import Titular from "./componentes/Titular";
 import useFetch from "./hooks/useFetch";
 import paradaAPI from "./parada.json";
 import GeneralContext from "./Contexts/GeneralContext";
+import Parada from "./Paginas/Parada";
+import Linea from "./Paginas/Linea";
+import NotFound from "./Paginas/NotFound";
 
 function App() {
   const [paradaBuscada, setParadaBuscada] = useState("");
@@ -26,16 +30,24 @@ function App() {
   }, [paradaBuscada, existeParada, pedirParada]);
 
   return (
-    <GeneralContext.Provider value={{ linea, parada, ocultarFrase, tiempo, paradaBuscada, existeParada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
-      <div className="contenedor">
-        <header className="cabecera">
-          <Titular numeroParada={paradaBuscada} />
-          <Display parada={paradaPrueba} />
-          <TiempoLinea linea={linea} />
-        </header>
-        <Formularios />
-      </div >
-    </GeneralContext.Provider>
+    <Router>
+      <GeneralContext.Provider value={{ linea, parada, ocultarFrase, tiempo, paradaBuscada, existeParada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
+        <Switch>
+          <Route path="/parada" exact>
+            <Parada />
+          </Route>
+          <Route path="/linea/">
+            <Linea />
+          </Route>
+          <Route path="/" exact>
+            <Redirect to="/parada" />
+          </Route>
+          <Route path="*" exact>
+            <NotFound />
+          </Route>
+        </Switch>
+      </GeneralContext.Provider>
+    </Router>
   );
 }
 

@@ -1,10 +1,12 @@
-import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import GeneralContext from "../Contexts/GeneralContext";
 import { lineaType } from "../types/lineaType";
 import Lineas from "./Lineas";
+import paradaAPI from "../parada.json";
 
-const Display = props => {
-  const { parada } = props;
+const Display = () => {
+  /*   const { parada } = useContext(GeneralContext); */
+  const { data: { ibus: parada } } = paradaAPI;
   const [posicion, setPosicion] = useState(0);
 
   useEffect(() => {
@@ -26,10 +28,6 @@ const Display = props => {
       {parada.map(linea => <Lineas key={linea.routeId} linea={linea} posicion={posicion}></Lineas >)}
     </div>
   );
-};
-
-Display.propTypes = {
-  parada: PropTypes.arrayOf(PropTypes.shape(lineaType)).isRequired
 };
 
 export default Display;
