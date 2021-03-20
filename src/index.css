@@ -40,6 +40,9 @@ body {
 .cabecera {
   text-align: center;
 }
+.cabecera a {
+  color: inherit;
+}
 .display {
   margin: 0 auto;
 }
@@ -66,7 +69,40 @@ select, button {
   background-color: rgb(107, 189, 91);
   color: #fff;
 }
-
-.HOLA {
-  color: blue;
+.grafico-paradas {
+  list-style: none;
+  margin-top: 40px;
+}
+.grafico-paradas .parada {
+  margin-bottom: 10px;
+  position: relative;
+}
+.grafico-paradas .parada:before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
+}
+.grafico-paradas .parada:after {
+  content: "";
+  border-left: 2px solid #fff;
+  height: 20px;
+  position: absolute;
+  left: 7px;
+  bottom: -15px;
+}
+.grafico-paradas .parada:last-child:after {
+  display: none;
+}
+.grafico-paradas .parada a {
+  color: inherit;
+}
+.bus a {
+  color: inherit;
+  text-decoration: none;
 }
