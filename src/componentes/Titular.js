@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import GeneralContext from "../Contexts/GeneralContext";
+import ParadaContext from "../Contexts/ParadaContext";
 
-const Titular = props => {
-  const { paradaBuscada, existeParada } = useContext(GeneralContext);
+const Titular = () => {
+  const { paradaBuscada, existeParada } = useContext(ParadaContext);
 
   if (paradaBuscada === "") {
     return <h1>Parada de Buses</h1>;
