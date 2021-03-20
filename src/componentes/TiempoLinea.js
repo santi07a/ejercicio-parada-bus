@@ -18,7 +18,6 @@ const TiempoLinea = props => {
 
 TiempoLinea.propTypes = {
   linea: PropTypes.string.isRequired,
-  tiempoRestante: PropTypes.number.isRequired
 };
 export default TiempoLinea;
 
