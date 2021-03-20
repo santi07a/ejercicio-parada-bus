@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import GeneralContext from "../Contexts/GeneralContext";
 
 const Buscador = () => {
-  const { setOcultarFrase, setParadaBuscada } = useContext(GeneralContext);
+  const { setOcultarFrase, parada, paradaBuscada, setParadaBuscada } = useContext(GeneralContext);
   const [busqueda, setBusqueda] = useState("");
 
   const modificaParadaBuscada = e => {
@@ -11,9 +11,15 @@ const Buscador = () => {
 
   const buscarParada = e => {
     e.preventDefault();
-    setParadaBuscada(busqueda);
+    if (parada) {
+      if (parada.numberMatched === 0) {
+        setParadaBuscada(`${paradaBuscada} no existe`);
+      } else {
+        setParadaBuscada(busqueda);
+        setOcultarFrase(false);
+      }
+    }
   };
-
 
   return (
     <form onSubmit={buscarParada}>

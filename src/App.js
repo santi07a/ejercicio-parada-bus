@@ -9,7 +9,7 @@ import GeneralContext from "./Contexts/GeneralContext";
 
 function App() {
   const [paradaBuscada, setParadaBuscada] = useState("");
-
+  const [ocultarFrase, setOcultarFrase] = useState(true);
   const { datos: existeParada, pedirDatos: pedirExisteParada } = useFetch();
   const { datos: parada, pedirDatos: pedirParada } = useFetch();
   useEffect(() => {
@@ -21,14 +21,13 @@ function App() {
     }
   }, [paradaBuscada, existeParada, pedirParada]);
 
-
   const [linea, setLinea] = useState("");
-  const [ocultarFrase, setOcultarFrase] = useState(true);
+
   const [tiempo, setTiempo] = useState(0);
   const { ibus: paradaPrueba, ibus: [{ line, "t-in-min": tiempoEnMinutos }] } = paradaAPI.data;
 
   return (
-    <GeneralContext.Provider value={{ paradaPrueba, ocultarFrase, tiempo, paradaBuscada, existeParada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
+    <GeneralContext.Provider value={{ paradaPrueba, parada, ocultarFrase, tiempo, paradaBuscada, existeParada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
       <div className="contenedor">
         <header className="cabecera">
           <Titular numeroParada={paradaBuscada} />
