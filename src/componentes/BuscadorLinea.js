@@ -3,14 +3,14 @@ import GeneralContext from "../Contexts/GeneralContext";
 import ParadaContext from "../Contexts/ParadaContext";
 
 const BuscadorLinea = () => {
-  const { ocultarFrase, setLinea, setTiempo, tiempo } = useContext(GeneralContext);
+  const { setLinea, setTiempo, tiempo } = useContext(GeneralContext);
   const { parada } = useContext(ParadaContext);
   const elegirBus = e => {
     setLinea(e.target.value);
   };
 
   return (
-    <form hidden={ocultarFrase}>
+    <form>
       <label htmlFor="tiempo-linea">Tiempo para que llegue la línea: </label>
       <select onChange={elegirBus} id="tiempo-linea">
         <option value="">Elige línea</option>
