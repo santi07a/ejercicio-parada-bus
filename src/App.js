@@ -21,13 +21,14 @@ function App() {
     }
   }, [paradaBuscada, existeParada, pedirParada]);
 
+
   const [linea, setLinea] = useState("");
   const [ocultarFrase, setOcultarFrase] = useState(true);
   const [tiempo, setTiempo] = useState(0);
   const { ibus: paradaPrueba, ibus: [{ line, "t-in-min": tiempoEnMinutos }] } = paradaAPI.data;
 
   return (
-    <GeneralContext.Provider value={{ paradaPrueba, ocultarFrase, tiempo, paradaBuscada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
+    <GeneralContext.Provider value={{ paradaPrueba, ocultarFrase, tiempo, paradaBuscada, existeParada, setParadaBuscada, setLinea, setOcultarFrase, setTiempo }}>
       <div className="contenedor">
         <header className="cabecera">
           <Titular numeroParada={paradaBuscada} />
