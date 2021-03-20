@@ -18,7 +18,6 @@ function App() {
   const { datos: parada, pedirDatos: pedirParada } = useFetch();
   const [linea, setLinea] = useState("");
   const [tiempo, setTiempo] = useState(0);
-  const { data: { ibus: paradaPrueba } } = paradaAPI;
 
   useEffect(() => {
     pedirExisteParada(`https://api.tmb.cat/v1/transit/parades/${paradaBuscada}?app_id=61904654&app_key=11d3b02f2f8b89d769d4ea6f88aa3ae5`);
