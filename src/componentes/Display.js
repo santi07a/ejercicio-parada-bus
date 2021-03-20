@@ -5,7 +5,7 @@ import Lineas from "./Lineas";
 import paradaAPI from "../parada.json";
 
 const Display = () => {
-  /*   const { parada } = useContext(GeneralContext); */
+  /*   const { parada } = useContext(ParadaContext); */
   const { data: { ibus: parada } } = paradaAPI;
   const [posicion, setPosicion] = useState(0);
 
