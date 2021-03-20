@@ -8,7 +8,6 @@ import ParadaContext from "../Contexts/ParadaContext";
 const Display = () => {
   const { parada } = useContext(ParadaContext);
   const [posicion, setPosicion] = useState(0);
-  console.log(parada);
   useEffect(() => {
     if (parada.data.ibus.length > 0) {
       setInterval(() => {
