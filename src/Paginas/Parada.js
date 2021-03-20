@@ -9,7 +9,7 @@ const Parada = () => {
 
       <header className="cabecera">
         <Titular />
-        {/*  <Display /> */}
+        <Display />
         <TiempoLinea />
       </header>
       <Formularios />

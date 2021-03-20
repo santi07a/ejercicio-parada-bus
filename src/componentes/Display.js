@@ -2,9 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import GeneralContext from "../Contexts/GeneralContext";
 import { lineaType } from "../types/lineaType";
 import Lineas from "./Lineas";
+import paradaAPI from "../parada.json";
 
 const Display = () => {
-  const { parada } = useContext(GeneralContext);
+  /*   const { parada } = useContext(GeneralContext); */
+  const { data: { ibus: parada } } = paradaAPI;
   const [posicion, setPosicion] = useState(0);
 
   useEffect(() => {
