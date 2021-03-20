@@ -3,9 +3,11 @@ import GeneralContext from "../Contexts/GeneralContext";
 import ParadaContext from "../Contexts/ParadaContext";
 
 const BuscadorLinea = () => {
-  const { ocultarFrase, setLinea } = useContext(GeneralContext);
+  const { ocultarFrase, setLinea, setTiempo, tiempo } = useContext(GeneralContext);
   const { parada } = useContext(ParadaContext);
-  const elegirBus = e => setLinea(e.target.value);
+  const elegirBus = e => {
+    setLinea(e.target.value);
+  };
 
   return (
     <form hidden={ocultarFrase}>
@@ -14,7 +16,7 @@ const BuscadorLinea = () => {
         <option value="">Elige línea</option>
         {
           parada?.data.ibus
-            .map(linea => <option value={linea.line} >{linea.line}</option>)
+            .map(linea => <option key={linea.line} value={linea.line}>{linea.line}</option>)
         }
       </select>
     </form >

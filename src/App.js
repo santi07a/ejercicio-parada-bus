@@ -12,7 +12,7 @@ import Linea from "./Paginas/Linea";
 import NotFound from "./Paginas/NotFound";
 
 function App() {
-  const [paradaBuscada, setParadaBuscada] = useState("");
+  const [paradaBuscada, setParadaBuscada] = useState("a");
   const [ocultarFrase, setOcultarFrase] = useState(true);
   const [linea, setLinea] = useState("");
   const [tiempo, setTiempo] = useState(0);
