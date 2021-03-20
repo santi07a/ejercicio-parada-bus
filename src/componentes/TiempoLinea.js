@@ -1,10 +1,8 @@
-import PropTypes from "prop-types";
 import { useContext, useEffect } from "react";
 import GeneralContext from "../Contexts/GeneralContext";
 
-const TiempoLinea = props => {
-  const { linea } = props;
-  const { tiempo, setTiempo, parada, ocultarFrase } = useContext(GeneralContext);
+const TiempoLinea = () => {
+  const { tiempo, linea, setTiempo, parada, ocultarFrase } = useContext(GeneralContext);
 
   useEffect(() => {
     if (linea !== 0 && linea !== "") {
@@ -16,9 +14,6 @@ const TiempoLinea = props => {
   );
 };
 
-TiempoLinea.propTypes = {
-  linea: PropTypes.string.isRequired,
-};
 export default TiempoLinea;
 
 
