@@ -4,11 +4,11 @@ import Buscador from "./Buscador";
 import BuscadorLinea from "./BuscadorLinea";
 
 const Formularios = () => {
-  const { parada } = useContext(ParadaContext);
+  const { parada, existeParada } = useContext(ParadaContext);
   return (
     <section className="forms">
       <Buscador />
-      {parada && <BuscadorLinea />}
+      {(existeParada && existeParada.numberMatched === 1 && parada) && <BuscadorLinea />}
     </section>
   );
 };
