@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Route, useParams } from "react-router";
 import GeneralContext from "../Contexts/GeneralContext";
 import NotFound from "./NotFound";
@@ -8,19 +8,20 @@ import ParadaContext from "../Contexts/ParadaContext";
 const Linea = () => {
   let { id } = useParams();
   const { datos: datosParadasLinea, pedirDatos: pedirParadasLinea } = useFetch();
-  const urlId = `https://api.tmb.cat/v1/transit/linies/bus/${id}/parades${process.env.REACT_APP_API_KEY} `;
-  console.log(id);
+  const urlId = `https://api.tmb.cat/v1/transit/linies/bus/19/parades${process.env.REACT_APP_API_KEY} `;
+
   useEffect(() => {
     pedirParadasLinea(urlId);
   }, [urlId, pedirParadasLinea]);
   console.log(datosParadasLinea);
+
   return (
     datosParadasLinea ?
       <>
         <header className="cabecera">
-          <h2>{/* Bus {id} - Hospital Clínic / Polígon Zona Franca */}</h2>
-          <h3>{/* Polígon Zona Franca -{">"} Hospital Clínic */}</h3>
-          <a href="/*">{/* Volver a la portada */}</a>
+          <h2>Bus {id} - {(datosParadasLinea.features[0].properties.DESC_LINIA)} </h2>
+          <h3>{datosParadasLinea.features[0].properties.DESC_SENTIT} -{">"} {datosParadasLinea.features[0].properties.DESTI_SENTIT}</h3>
+          <a href="/Parada">Volver a la portada</a>
         </header>
         <section>
           <ul className="grafico-paradas">
