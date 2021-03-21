@@ -26,7 +26,7 @@ const Parada = () => {
       <div className="contenedor">
         <header className="cabecera">
           <Titular />
-          {(existeParada && existeParada.numberMatched === 1 && parada) && <Display />}
+          {(existeParada && parada) && <Display />}
           {linea !== "" && < TiempoLinea />}
         </header>
         <Formularios />
