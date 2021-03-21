@@ -7,7 +7,7 @@ const Lineas = props => {
 
   return (
     <div className="bus" style={{ top: `${posicion}px` }}>
-      <a href="../Paginas/Linea" className="linea">{numero}</a>
+      <a href={`/linea/${linea.line}`} className="linea">{numero}</a>
       <span className="destino">{destino}</span>
       <span className="tiempo">{minutos}</span>
     </div>
