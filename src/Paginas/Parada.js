@@ -13,11 +13,11 @@ const Parada = () => {
   const { paradaBuscada, linea } = useContext(GeneralContext);
 
   useEffect(() => {
-    pedirExisteParada(`https://api.tmb.cat/v1/transit/parades/${paradaBuscada}?app_id=61904654&app_key=11d3b02f2f8b89d769d4ea6f88aa3ae5`);
+    pedirExisteParada(process.env.REACT_APP_API_URL_EXISTE + paradaBuscada + process.env.REACT_APP_API_KEY);
   }, [paradaBuscada, pedirExisteParada, pedirParada]);
   useEffect(() => {
     if (existeParada) {
-      pedirParada(`https://api.tmb.cat/v1/ibus/stops/${paradaBuscada}?app_id=61904654&app_key=11d3b02f2f8b89d769d4ea6f88aa3ae5`);
+      pedirParada(process.env.REACT_APP_API_URL_PARADA + paradaBuscada + process.env.REACT_APP_API_KEY);
     }
   }, [paradaBuscada, existeParada, pedirParada]);
 
