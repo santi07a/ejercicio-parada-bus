@@ -24,7 +24,7 @@ function App() {
           <Route path="/parada" exact>
             <Parada />
           </Route>
-          <Route path="/linea/">
+          <Route path="/linea/:id">
             <Linea />
           </Route>
           <Route path="/" exact>

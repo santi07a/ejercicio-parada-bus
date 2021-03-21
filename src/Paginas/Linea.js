@@ -8,7 +8,7 @@ import ParadaContext from "../Contexts/ParadaContext";
 const Linea = () => {
   let { id } = useParams();
   const { datos: datosParadasLinea, pedirDatos: pedirParadasLinea } = useFetch();
-  const urlId = `https://api.tmb.cat/v1/transit/linies/bus/19/parades${process.env.REACT_APP_API_KEY} `;
+  const urlId = `https://api.tmb.cat/v1/transit/linies/bus/${id}/parades${process.env.REACT_APP_API_KEY} `;
 
   useEffect(() => {
     pedirParadasLinea(urlId);
